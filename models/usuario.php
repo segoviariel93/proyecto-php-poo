@@ -82,15 +82,10 @@ class Usuario extends Model implements IModel{
 		}
 	
 		//aqui se guarda
-		$sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getNombre()}', '{$this->getApellidos()}', '{$this->getEmail()}', '{$this->getPassword()}','CURDATE()','user');";
-		var_dump($sql);
-		
+		$sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getNombre()}', '{$this->getApellidos()}', '{$this->getEmail()}', '{$this->getPassword()}',CURDATE(),'user');";
+			
 		$save = $this->db->query($sql);
 		
-		var_dump($save);
-
-		die();
-
 		$result = false;
 		if($save){
 			$result = true;
