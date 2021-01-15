@@ -17,13 +17,8 @@ class usuarioController{
 			$apellidos = (isset($_POST['apellidos']) && $_POST['apellidos']!="") ? $_POST['apellidos'] : false;
 			$email = (isset($_POST['email']) && $_POST['email']!="" && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) ? $_POST['email'] : false;
 			$password = (isset($_POST['password']) && $_POST['password']!="") ? $_POST['password'] : false;
-
 			
-			var_dump($nombre);
-			var_dump($apellidos);
-			var_dump($email);
-			var_dump($password);
-			die();
+		
 			
 			if($nombre && $apellidos && $email && $password){
 				$usuario = new Usuario();
@@ -33,9 +28,6 @@ class usuarioController{
 				$usuario->setPassword($password);
 
 				$save = $usuario->save();
-
-			
-				
 				
 				if($save===true){
 					
